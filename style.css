@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    font-family: "Domine", serif;
+    background-color: black;
+  }
+  
+  body,
+  .clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+  }
+  #clock {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 600;
+    width: 16rem;
+    height: 11rem;
+    border: 0.1rem solid black;
+    border-radius: 100%;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+      -1px -1px 0 #000;
+  }
+  
+  .canvas {
+    position: relative;
+    border-radius: 100%;
+    height: 13rem;
+    width: 16.5rem;
+    overflow: hidden;
+  }
+  .canvas::before {
+    content: "";
+    background-image: conic-gradient(
+      #2db300,
+      #33cc00,
+      #39e600,
+      #40ff00,
+      #53ff1a,
+      #66ff33,
+      #79ff4d,
+      #8cff66,
+      #9fff80,
+      #b3ff99 450deg,
+      transparent 1500deg
+    );
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: rotate 1s linear infinite;
+    filter: blur(1em);
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
